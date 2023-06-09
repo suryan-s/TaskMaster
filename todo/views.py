@@ -13,7 +13,7 @@ def home(request):
     :param request:
     :return:
     """
-    print(timezone.now())
+    # print(timezone.now())
     ongoing = TodoItem.objects. \
         filter(username=str(request.user.username)). \
         filter(deadline_at__gt=timezone.now()). \
@@ -56,7 +56,7 @@ def add_todo(request):
                 is_completed=False
             )
             todo_new.save()
-            print("New task added: ", todo_new.title)
+            # print("New task added: ", todo_new.title)
             return redirect('/')
         else:
             print("Form is not valid")
