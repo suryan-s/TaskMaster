@@ -1,0 +1,81 @@
+body {
+    background-color: #f7f7f7;
+    color: #333333;
+}
+
+.main-heading {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.sub-heading {
+    font-size: 18px;
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+
+.card {
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.ongoing-card {
+    border: 2px solid #007bff;
+}
+
+.completed-card {
+    border: 2px solid #28a745;
+}
+
+.expired-card {
+    border: 2px solid #dc3545;
+}
+
+.task {
+    cursor: pointer;
+    padding: 10px;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.task:hover {
+    background-color: #f7f7f7;
+}
+
+.task-details-container {
+    display: none;
+    padding: 10px;
+    background-color: #f7f7f7;
+}
+
+.add-task-btn {
+    border-radius: 5px;
+}
+
+.modal {
+    text-align: left;
+}
+
+.modal-dialog {
+    max-width: 500px;
+}
+
+.modal-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.modal-footer {
+    justify-content: space-between;
+}
+
+.spacer {
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+@media (max-width: 576px) {
+    .col-4.offset-4.text-center {
+        margin-top: 10px;
+    }
+}
