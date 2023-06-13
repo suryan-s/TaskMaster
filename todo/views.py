@@ -13,21 +13,20 @@ def home(request):
     :param request:
     :return:
     """
-    # print(timezone.now())
-    ongoing = TodoItem.objects. \
-        filter(username=str(request.user.username)). \
-        filter(deadline_at__gt=timezone.now()). \
-        filter(is_completed=False). \
-        order_by('deadline_at')
-    expired = TodoItem.objects. \
-        filter(username=str(request.user.username)). \
-        filter(deadline_at__lt=timezone.now()). \
-        filter(is_completed=False). \
-        order_by('deadline_at')
-    completed = TodoItem.objects. \
-        filter(username=str(request.user.username)). \
-        filter(is_completed=True). \
-        order_by('deadline_at')
+    ongoing = TodoItem.objects.filter(
+        username=str(request.user.username),
+        deadline_at__gt=timezone.now(),
+        is_completed=False
+    ).order_by('deadline_at')
+    expired = TodoItem.objects.filter(
+        username=str(request.user.username),
+        deadline_at__lt=timezone.now(),
+        is_completed=False
+    ).order_by('deadline_at')
+    completed = TodoItem.objects.filter(
+        username=str(request.user.username),
+        is_completed=True
+    ).order_by('deadline_at')
 
     content = {
         'ongoing': ongoing,
